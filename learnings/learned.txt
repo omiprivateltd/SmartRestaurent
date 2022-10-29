@@ -1,0 +1,4 @@
+use place holder in attribute with autocomplete in input tag
+type file in input tag for files 
+forms can be used to redirect the user to another page
+.files to get files item in file input tag

@@ -10,6 +10,11 @@ class Database:
         """Function Used To Connect With Database"""
         self.conn=  sqlite3.connect(db_name)
 
+    def get_menu(self):
+        """Function Used to Get All Item's of a MENU"""
+        output = db.execute_command('''SELECT * FROM MENU''')
+        return output
+
     def execute_command(self,command):
         """Function Used To Execute Any Database Query
         ARGS: COMMAND:str
