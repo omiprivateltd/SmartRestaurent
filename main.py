@@ -44,13 +44,13 @@ def get_all_item(html:bool=False):
     """Function Used to add new item to database"""
     try:
         raw_html = """<div id="{}" class="text-center">
-            <img class='center' src="http://127.0.0.1:8000/Image?image_name={}" height="500" width="500" alt="" style="display:block;margin-left:auto;margin-right: auto;width:50%;">{}</image>
+            <img class='center' src="https://smart-rest.herokuapp.com/Image?image_name={}" height="500" width="500" alt="" style="display:block;margin-left:auto;margin-right: auto;width:50%;">{}</image>
             <h1 class="text-center font-bold"></h1>
         </div>"""
         menu_items = [ ]
         output = db.get_menu()
         for index,item in enumerate(output):
-            full_path = f"http://127.0.0.1:8000/Image?image_name={item[4]}"
+            full_path = f"https://smart-rest.herokuapp.com/Image?image_name={item[4]}"
             item_name=item[1]
             item_price=item[2]
             item_desc=item[3]
@@ -87,7 +87,7 @@ def get_image(image_name:str):
 @app.get("/getQR")
 def get_qr():
     """Function Used to Generate New QR"""
-    url=pyqrcode.create("http://127.0.0.1:5500/front_end/items.html")
+    url=pyqrcode.create("https://smart-rest.herokuapp.com/front_end/items.html")
     url.png("QR.png",scale=6)
     return FileResponse("QR.png")
 
