@@ -87,7 +87,7 @@ def get_image(image_name:str):
 @app.get("/getQR")
 def get_qr():
     """Function Used to Generate New QR"""
-    url=pyqrcode.create("http://127.0.0.1:8000")
+    url=pyqrcode.create("http://127.0.0.1:5500/front_end/items.html")
     url.png("QR.png",scale=6)
     return FileResponse("QR.png")
 
