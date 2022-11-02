@@ -1,5 +1,5 @@
 """Backend API"""
-from ast import Pass
+import pyqrcode,png
 import json
 from fastapi import FastAPI
 from fastapi.requests import Request
@@ -35,6 +35,8 @@ async def add_new_item(request:Request):
         db_output = db.insert_item(item_name,item_desc,int(item_price),file_name)
     except Exception as error:
         db_output = error
+        print("** exception occured",error)
+        return error
     return {"message":db_output}
 
 @app.get("/getItems")
@@ -82,4 +84,12 @@ def get_image(image_name:str):
     except RuntimeError as error:
         return error
 
+@app.get("/getQR")
+def get_qr():
+    """Function Used to Generate New QR"""
+    url=pyqrcode.create("http://127.0.0.1:8000")
+    url.png("QR.png",scale=6)
+    return FileResponse("QR.png")
 
+if __name__=="__main__":
+    print(get_qr())

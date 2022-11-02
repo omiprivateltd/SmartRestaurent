@@ -20,7 +20,6 @@ class Database:
     def get_menu(self):
         """Function Used to Get All Item's of a MENU"""
         output = list(self.execute_command('''SELECT * FROM MENU'''))
-        print(output)
         return output
 
     def execute_command(self,command):
@@ -42,12 +41,12 @@ class Database:
         
 if __name__=="__main__":
     database = Database('test.db')
-    output = database.execute_command("""DELETE FROM MENU WHERE ITEMNAME='Test Shot 2';""")
-    print("output",list(output))
-    for k in output:
-        print(k)
-    # for k in database.get_menu():
-    #     print("k",k)
+    # output = database.execute_command("""DELETE FROM MENU WHERE ITEMNAME='Test Shot 2';""")
+    # print("output",list(output))
+    # for k in output:
+    #     print(k)
+    for k in database.get_menu():
+        print("k",k)
 
     # uncomment if you have not created the table
     # try:
