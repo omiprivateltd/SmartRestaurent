@@ -12,7 +12,10 @@
     <input id="Item_name_value" placeholder="Item Name" autocomplete="on" type="text">
     <input id="item_price" placeholder="Item Price" autocomplete="on" type="text">
     <input id="item_description"  placeholder="Item Description" autocomplete="on" type="text">
-    <input id="item_image" placeholder="Item Image" type="file" accept="'image/*">
+    <input id="item_image" placeholder="Item Image" type="file" accept="'images/*">
     <input onclick=collect_item_info()  type="submit">
+    <h2>Remvoe and Item</h2>
+    <input id="item_name_value" placeholder="Item Name to Remove" autocomplete="on" type="text">
+    <input onclick=remove_item() type="submit">
 </body>
 </html>

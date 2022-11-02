@@ -2,3 +2,10 @@ use place holder in attribute with autocomplete in input tag
 type file in input tag for files 
 forms can be used to redirect the user to another page
 .files to get files item in file input tag
+bytes cannot be directly stored in sqllite3 database
+adding attribute to html tag with javascript with setAttribute()
+sqllite3 gives thread id check_same_thread=False need to explore  more on this
+how to make file downlaodable in fastapi this is done because of byte encoding error
+img tag height and width attribute 
+clone an element with element.cloneNode(true) true to copy element inside it 
+creating html object from string : doc.createelement('div').innerHTML = htmltext
