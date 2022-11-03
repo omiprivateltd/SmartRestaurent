@@ -8,12 +8,12 @@ function collect_item_info() {
     form_data.append("item_price",item_price)
     form_data.append("item_description",item_description)
     form_data.append("image_data",item_image.files[0])
-    let backend_api_url = "http://127.0.0.1:8000/addItem"
+    let backend_api_url = "https://smart-rest.herokuapp.com/addItem"
     fetch(backend_api_url,{method:"POST",body:form_data}).then(response =>alert(response)).catch(console.error)}   
 
 function remove_item() { 
     let item_name_to_remvoe = document.querySelector("#item_name_value").value
-    api_endpoint = "http://127.0.0.1:8000/deleteItem?itemName="+item_name_to_remvoe
+    api_endpoint = "https://smart-rest.herokuapp.com/deleteItem?itemName="+item_name_to_remvoe
     fetch(api_endpoint,{method:"POST"})
     alert("ITEM REMOVED")
 }

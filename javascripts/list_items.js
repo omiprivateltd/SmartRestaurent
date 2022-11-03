@@ -1,6 +1,6 @@
 function call_api() { 
     // Function Used to get all items in database
-    api_endpoint = "http://127.0.0.1:8000/getItems?html=True"
+    api_endpoint = "https://smart-rest.herokuapp.com/getItems?html=True"
     fetch(api_endpoint,{method:"GET"}).then(response => response.json()).then(response => handle_api_response(response))  
 }
 
