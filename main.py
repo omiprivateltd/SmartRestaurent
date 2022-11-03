@@ -87,7 +87,7 @@ def get_image(image_name:str):
 @app.get("/getQR")
 def get_qr():
     """Function Used to Generate New QR"""
-    url=pyqrcode.create("https://smart-rest.herokuapp.com/front_end/items.html")
+    url=pyqrcode.create("https://smart-rest-front-end.herokuapp.com/items.html")
     url.png("QR.png",scale=6)
     return FileResponse("QR.png")
 
